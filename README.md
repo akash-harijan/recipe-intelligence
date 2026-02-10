@@ -43,6 +43,10 @@ Returns top 10 co-occurring ingredients.
 
 Returns top 5 similar recipes with similarity scores.
 
+## AWS Architecture
+
+![AWS Cloud Architecture - Data Flow & CI/CD Pipeline](architecture-diagram.png)
+
 ## Stack
 
 - **FastAPI** — async API framework with auto-generated docs
