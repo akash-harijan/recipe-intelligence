@@ -27,8 +27,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 logger = logging.getLogger(__name__)
 
 # ── Global service singletons (initialised on startup) ──────────────────
-cooccurrence_svc: CooccurrenceService | None = None
-duplicate_svc: DuplicateService | None = None
+cooccurrence_svc: CooccurrenceService = None
+duplicate_svc: DuplicateService = None
 
 
 @asynccontextmanager

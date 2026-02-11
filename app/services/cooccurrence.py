@@ -35,10 +35,6 @@ class CooccurrenceService:
 
     # ── Query ───────────────────────────────────────────────────────────
 
-    @property
-    def known_ingredients(self) -> list[str]:
-        return sorted(self._index.keys())
-
     def query(self, ingredient: str, top_n: int = 10) -> list[dict]:
         """
         Return the top-N ingredients most frequently co-occurring with `ingredient`.

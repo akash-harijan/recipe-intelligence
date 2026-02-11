@@ -23,8 +23,9 @@ logger = logging.getLogger(__name__)
 
 class DuplicateService:
     def __init__(self, recipes_df: pd.DataFrame):
+
         self._df = recipes_df.copy()
-        self._vectorizer: TfidfVectorizer | None = None
+        self._vectorizer: TfidfVectorizer = None
         self._tfidf_matrix = None
         self._build_index()
 
@@ -73,6 +74,7 @@ class DuplicateService:
         query_text = f"{name} {name} {name} {ingredient_text}".lower()
 
         query_vec = self._vectorizer.transform([query_text])
+        
         scores = cosine_similarity(query_vec, self._tfidf_matrix).flatten()
 
         # Get top N+1 in case the exact recipe is in the DB (we'd skip it)
